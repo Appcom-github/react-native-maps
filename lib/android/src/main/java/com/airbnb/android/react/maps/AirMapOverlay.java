@@ -119,6 +119,7 @@ public class AirMapOverlay extends AirMapFeature implements ImageReadable {
     }
 
     // Two different ways of specifying postion of the groundOverlay
+    options.bearing(bearing);
     if(this.location != null){
       if(this.height == 0.0f){
         options.position(location, width);
@@ -126,7 +127,6 @@ public class AirMapOverlay extends AirMapFeature implements ImageReadable {
         options.position(location, width, height);
       }
       options.anchor(anchor[0], anchor[1]);
-      options.bearing(bearing);
     } else {
       options.positionFromBounds(bounds);
     }
